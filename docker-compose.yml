@@ -7,3 +7,5 @@ master:
     - "8080:8080"
   volumes:
     - /var/jenkins_home
+  labels:
+    - "traefik.frontend.rule=Host:localhost.ci01.morotai.de, ci01.morotai.de"
