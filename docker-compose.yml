@@ -9,3 +9,4 @@ master:
     - /var/jenkins_home
   labels:
     - "traefik.frontend.rule=Host:localhost.ci01.morotai.de, ci01.morotai.de"
+    - "- traefik.frontend.passHostHeader=true"
