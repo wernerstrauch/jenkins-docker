@@ -3,7 +3,7 @@ ci02:
   environment:
     JAVA_OPTS: "-Djava.awt.headless=true"
   ports:
-    - "50000:50000"
+    - "40000:50000"
     - "8060:8080"
   volumes:
     - /var/jenkins_home
