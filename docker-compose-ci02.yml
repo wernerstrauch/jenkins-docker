@@ -1,0 +1,12 @@
+ci02:
+  build: .
+  environment:
+    JAVA_OPTS: "-Djava.awt.headless=true"
+  ports:
+    - "50000:50000"
+    - "8060:8080"
+  volumes:
+    - /var/jenkins_home
+  labels:
+    - "traefik.frontend.rule=Host:localhost.ci02.morotai.de, ci02.morotai.de"
+    - "- traefik.frontend.passHostHeader=true"
