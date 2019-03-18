@@ -9,8 +9,6 @@ ci02:
       - type: bind
         source: /var/lib/jenkins
         target: /var/jenkins_home
-  volumes:
-    - "data:/var/lib/jenkins:/var/jenkins_home"
   labels:
     - "traefik.frontend.rule=Host:localhost.ci02.morotai.de, ci02.morotai.de"
     - "- traefik.frontend.passHostHeader=true"
