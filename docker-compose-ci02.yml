@@ -1,14 +1,16 @@
-ci02:
-  build: .
-  environment:
-    JAVA_OPTS: "-Djava.awt.headless=true"
-  ports:
-    - "40000:50000"
-    - "8060:8080"
-  volumes:
-      - type: bind
-        source: /var/lib/jenkins
-        target: /var/jenkins_home
-  labels:
-    - "traefik.frontend.rule=Host:localhost.ci02.morotai.de, ci02.morotai.de"
-    - "- traefik.frontend.passHostHeader=true"
+version: "3.2"
+services:
+  ci02:
+    build: .
+    environment:
+      JAVA_OPTS: "-Djava.awt.headless=true"
+    ports:
+      - "40000:50000"
+      - "8060:8080"
+    volumes:
+        - type: bind
+          source: /var/lib/jenkins
+          target: /var/jenkins_home
+    labels:
+      - "traefik.frontend.rule=Host:localhost.ci02.morotai.de, ci02.morotai.de"
+      - "- traefik.frontend.passHostHeader=true"
