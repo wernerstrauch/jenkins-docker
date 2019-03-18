@@ -14,8 +14,8 @@ services:
           target: /var/jenkins_home
     volumes:
         - type: bind
-	  source: /var/run/docker.sock
-	  target: /var/run/docker.sock
+          source: /var/run/docker.sock
+          target: /var/run/docker.sock
     labels:
       - "traefik.frontend.rule=Host:localhost.ci02.morotai.de, ci02.morotai.de"
       - "- traefik.frontend.passHostHeader=true"
