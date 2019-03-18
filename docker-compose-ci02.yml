@@ -9,7 +9,7 @@ services:
       - "8060:8080"
     volumes:
         - type: bind
-          source: /var/lib/jenkins
+          source: /var/lib/jenkins/ci02
           target: /var/jenkins_home
     labels:
       - "traefik.frontend.rule=Host:localhost.ci02.morotai.de, ci02.morotai.de"
