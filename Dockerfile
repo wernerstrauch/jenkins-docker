@@ -3,7 +3,7 @@ FROM openjdk:8-jdk-stretch
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
 #install needed tools for morotai jobs
-RUN apt-get install zip
+RUN apt-get install unzip
 
 # install docker-compose
 RUN curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
