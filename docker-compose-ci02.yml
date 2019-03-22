@@ -10,11 +10,11 @@ services:
       - "8060:8080"
     volumes:
         - type: bind
-	  name: jenkins_homeci02
+          name: jenkins_homeci02
           source: /var/lib/jenkins/ci02
           target: /var/jenkins_home
         - type: bind
-	  name: docker_sock
+          name: docker_sock
           source: /var/run/docker.sock
           target: /var/run/docker.sock
     labels:
