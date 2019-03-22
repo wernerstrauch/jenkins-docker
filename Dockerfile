@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-stretch
 
-RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/* zip
+RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
 #install needed tools for morotai jobs
 RUN apt-get install zip
