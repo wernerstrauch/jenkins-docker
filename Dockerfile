@@ -24,10 +24,10 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN docker-compose --version
 
 
-# install phpunit in version 6.5
-RUN wget https://phar.phpunit.de/phpunit-6.5.phar
-RUN chmod +x phpunit-6.5.phar
-RUN mv phpunit-6.5.phar /usr/bin/phpunit
+# install phpunit in version 6.5 for morotai
+RUN wget https://phar.phpunit.de/phpunit-6.2.3.phar
+RUN chmod +x phpunit-6.2.3.phar
+RUN mv phpunit-6.2.3.phar /usr/bin/phpunit
 
 ARG user=jenkins
 ARG group=jenkins
