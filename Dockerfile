@@ -11,6 +11,14 @@ RUN curl --silent --location https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes build-essential
 
+# Installation of php for morotai
+RUN apt-get install ca-certificates apt-transport-https 
+RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
+RUN echo "deb https://packages.sury.org/php/ jessie main" | tee /etc/apt/sources.list.d/php.list
+RUN apt-get update
+RUN apt-get install -y php7.1
+#RUN apt-get install -y php7.1-cli php7.1-common php7.1-curl php7.1-gd php7.1-json php7.1-mbstring php7.1-mysql php7.1-xml
+
 
 # install docker-compose
 RUN curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
