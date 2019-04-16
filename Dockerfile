@@ -23,6 +23,12 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-c
 RUN chmod +x /usr/local/bin/docker-compose
 RUN docker-compose --version
 
+
+# install phpunit in version 6.5
+RUN wget https://phar.phpunit.de/phpunit-6.5.phar
+RUN chmod +x phpunit-6.5.phar
+RUN mv phpunit-6.5.phar /usr/bin/phpunit
+
 ARG user=jenkins
 ARG group=jenkins
 ARG uid=1000
