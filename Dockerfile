@@ -3,7 +3,13 @@ FROM openjdk:8-jdk-stretch
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
 #install needed tools for morotai jobs
-RUN apt-get update && apt-get install -y zip composer nodejs
+RUN apt-get update && apt-get install -y zip composer
+
+# Install Node.js for morotai
+RUN apt-get install --yes curl
+RUN curl --silent --location https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes build-essential
 
 
 # install docker-compose
