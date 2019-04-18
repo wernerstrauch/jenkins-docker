@@ -3,6 +3,7 @@ services:
   ci01:
     build: .
     user: root
+    restart: always
     environment:
       JAVA_OPTS: "-Djava.awt.headless=true"
     ports:
