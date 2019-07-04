@@ -3,7 +3,7 @@ FROM openjdk:8-jdk-stretch
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
 #install needed tools for morotai jobs
-RUN apt-get update && apt-get install -y zip composer
+RUN apt-get update && apt-get install -y zip composer maven
 
 # Install Node.js for morotai
 RUN apt-get install --yes curl
