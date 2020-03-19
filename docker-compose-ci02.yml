@@ -10,10 +10,10 @@ services:
       - "40000:50000"
       - "8060:8080"
     volumes:
-        - type: bind
+        - type: mount
           source: /var/lib/jenkins/ci02
           target: /var/jenkins_home
-        - type: bind
+        - type: mount
           source: /var/run/docker.sock
           target: /var/run/docker.sock
     labels:
