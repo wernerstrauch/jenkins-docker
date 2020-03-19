@@ -1,18 +1,18 @@
 version: "3.2"
 services:
-  ci01:
+  ci03:
     build: .
     user: root
     restart: always
     environment:
       JAVA_OPTS: "-Djava.awt.headless=true"
     ports:
-      - "50000:50000"
-      - "8080:8080"
+      - "30000:50000"
+      - "8050:8080"
     volumes:
         - type: bind
-          source: /var/lib/jenkins/ci01
+          source: /var/lib/jenkins/ci03
           target: /var/jenkins_home
     labels:
-      - "traefik.frontend.rule=Host:localhost.ci01.morotai.de, ci01.morotai.de"
+      - "traefik.frontend.rule=Host:localhost.ci03.morotai.de, ci03.morotai.de"
       - "- traefik.frontend.passHostHeader=true"
