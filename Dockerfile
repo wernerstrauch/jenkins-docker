@@ -5,21 +5,18 @@ RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 #install needed tools for morotai jobs
 RUN apt-get update && apt-get install -y zip composer maven
 
-# Install Node.js for morotai
+# Install Node.js
 RUN apt-get install --yes curl
-RUN curl --silent --location https://deb.nodesource.com/setup_6.x | bash -
+RUN curl --silent --location https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install --yes nodejs
 RUN apt-get install --yes build-essential
 
-# Installation of php for morotai
+# Installation of php
 RUN apt-get install apt-transport-https ca-certificates
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
 RUN apt-get update
 RUN apt-get -y install php7.1-apcu php7.1-bcmath php7.1-cli php7.1-curl php7.1-fpm php7.1-gd php7.1-intl php7.1-mcrypt php7.1-mysql php7.1-soap php7.1-xml php7.1-zip php7.1-mbstring phpunit
-
-RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-RUN apt install nodejs
 
 # install docker
 RUN apt-get install --yes \
