@@ -14,5 +14,5 @@ services:
           source: /var/lib/jenkins/ci01
           target: /var/jenkins_home
     labels:
-      - "traefik.frontend.rule=Host:localhost.ci01.morotai.de, ci01.morotai.de"
+      - "traefik.frontend.rule=Host:localhost.ci01.digitalsprung.de, ci01.digitalsprung.de"
       - "- traefik.frontend.passHostHeader=true"
