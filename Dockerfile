@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y zip composer maven
 RUN apt-get install --yes curl
 RUN curl --silent --location https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install --yes nodejs
-RUN apt-get install --yes build-essential
+RUN apt-get install --yes build-essential 
 
 # Installation of php
 RUN apt-get install apt-transport-https ca-certificates
