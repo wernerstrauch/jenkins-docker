@@ -18,6 +18,9 @@ RUN sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sou
 RUN apt-get update
 RUN apt-get -y install php7.1-apcu php7.1-bcmath php7.1-cli php7.1-curl php7.1-fpm php7.1-gd php7.1-intl php7.1-mcrypt php7.1-mysql php7.1-soap php7.1-xml php7.1-zip php7.1-mbstring phpunit
 
+RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+RUN sudo apt install nodejs
+
 # install docker
 RUN apt-get install --yes \
     apt-transport-https \
